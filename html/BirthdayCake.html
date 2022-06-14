@@ -173,7 +173,26 @@
 	<img src="../img/HappyBirthday.png">
 </div>
 
-<div id="button1" class="button-style1">
+<script type="text/javascript">
+  function requestFullScreen(element) {
+	var element=document.documentElement;
+	var requestMethod = element.requestFullScreen || //W3C
+	element.webkitRequestFullScreen || //Chrome等
+	element.mozRequestFullScreen || //FireFox
+	element.msRequestFullScreen; //IE11
+	if (requestMethod) {
+		requestMethod.call(element);
+	}
+	else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
+		var wscript = new ActiveXObject("WScript.Shell");
+		if (wscript !== null) {
+		 wscript.SendKeys("{F11}");
+		}
+	}
+}
+</script>
+
+<div id="button1" class="button-style1" onclick="requestFullScreen()"">
 	<a href="Memories.html" class="lk1">
 		<div class="link1">
 			<div class="bt1">
